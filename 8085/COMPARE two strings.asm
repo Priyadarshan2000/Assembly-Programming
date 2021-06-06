@@ -3,21 +3,25 @@
 // /Q4
 # ORG 8000H
 	   LXI H,8091
-	   LXI D,8061
+	   LXI B,8061
 	   LDA 8060
-	   MOV C,A
+	   MOV D,A
 
-LOOP2: LDAX D
+BACK:	   LDAX B
 	   CMP M
-	   JZ LOOP1
-	   MVI A,FF
-	   JMP L1
+	   JNZ SKIP
+	   INX H
+	   INX B
+	   DCR D
+	   JNZ BACK
+	   MVI A,01
+	   STA 8070
+	   HLT
 
-LOOP1: INX H
-	   INX D
-	   DCR C
-	   JNZ LOOP2
-	   MVI A,00
-
-L1: STA 8070
-     HLT
+SKIP:	   MVI A,FF
+	   STA 8070
+	   HLT
+# ORG 8060H
+# DB 05H,01H,4FH,10H,9BH,8BH
+# ORG 8091H
+# DB 01H,4FH,10H,9BH,8BH
