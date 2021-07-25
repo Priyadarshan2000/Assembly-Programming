@@ -1,0 +1,7 @@
+# ORG 8000H
+	   LXI H,9000
+	   MOV A,M
+	   STA 9500
+	   HLT
+# ORG 9000H
+# DB 45
