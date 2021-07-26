@@ -1,0 +1,6 @@
+# ORG 8000H
+	   LDA 9000
+	   STA 9500
+	   HLT
+# ORG 9000
+# DB 45H

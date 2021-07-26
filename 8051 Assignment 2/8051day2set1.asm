@@ -1,0 +1,5 @@
+;q1 set1
+MOV A,#55H
+CPL A
+MOV R4,A
+END

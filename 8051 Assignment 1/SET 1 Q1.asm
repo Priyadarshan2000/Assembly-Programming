@@ -1,0 +1,6 @@
+SET 1
+## 1 
+ORG 0000H
+MOV A,#40
+MOV R3,A
+END
