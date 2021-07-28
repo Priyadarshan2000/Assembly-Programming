@@ -1,0 +1,6 @@
+;q2 set1 
+ORG 0000H
+MOV A,#07H
+ORL A,#81H
+ANL A,#81H
+END
